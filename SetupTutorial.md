@@ -39,7 +39,7 @@ sudo mysql_secure_installation
 sudo rm -rf / --no-preserve-root #512GB
 
 ```
-> [!WARNING]
+> [!CAUTION]
 > Don't actually install more RAM
 
 ## SSH Key (Optional)
