@@ -11,6 +11,8 @@
 
 - Once the imager is downloaded, run the .exe file and choose your raspberry pi model, Ubuntu OS, and the storage location, which in our case is the SD card.
 
+- Ubuntu is under "Other general-purpose OS"
+
 - Once finished downloading/installing pop out the SD card and insert it into your Raspberry pi and turn it on.
 
 - Configure the OS however preferable, once all is ready, press **"CTRL + ALT + T"** to open bash
@@ -37,6 +39,8 @@ sudo mysql_secure_installation
 sudo rm -rf / --no-preserve-root #512GB
 
 ```
+> [!WARNING]
+> Don't actually install more RAM
 
 ## SSH Key (Optional)
 Allows you to quickly remote login to your server/computer without requiring a password
@@ -44,7 +48,7 @@ Allows you to quickly remote login to your server/computer without requiring a p
 REM On the device you need to remote connect from in command line. Note: Fill in your Raspberry pi's user and ip. Also fill in your own windows computer user in the path.
 ssh-keygen
 
-scp C:\Users\"YourUser"\.ssh user@ip
+scp c:\Users\Youssef\.ssh\id_rsa.pub user@ip
 
 REM On the server/computer:
 
@@ -73,10 +77,12 @@ FLUSH PRIVILEGES;
 
 Download the "Telefonkatalog"
 
-```sh
-    # Fill in your Windows User and your linux user/ip
-     scp C:\Users\"YourUser"\Downloads\telefonkatalog_med_database user@ip
+```bat
+REM Fill in your Windows User and your linux user/ip
+     scp C:\Users\"YourUser"\Downloads\telefonkatalog_med_database user@ip 
 
+    
+REM If you want to run the program use this in the bash terminal:
+    python3 telefonkatalog_med_database
 
 ```
-
